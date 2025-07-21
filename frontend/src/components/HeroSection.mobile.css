@@ -1,0 +1,191 @@
+/* Mobile-specific slow animations for Hero Section */
+@media (max-width: 768px) {
+  /* Hero Title Animations */
+  .hero-title {
+    animation: heroTitleGlow 15s ease-in-out infinite !important;
+    transition: all 1.5s ease-in-out !important;
+  }
+
+  @keyframes heroTitleGlow {
+    0%, 100% {
+      text-shadow: 
+        0 0 15px rgba(255, 165, 0, 0.3),
+        0 0 30px rgba(255, 165, 0, 0.2);
+      transform: scale(1);
+    }
+    50% {
+      text-shadow: 
+        0 0 25px rgba(255, 165, 0, 0.5),
+        0 0 50px rgba(255, 165, 0, 0.3);
+      transform: scale(1.02);
+    }
+  }
+
+  /* Hero Description Animation */
+  .hero-description {
+    animation: fadeInSlowly 8s ease-out forwards !important;
+    transition: all 1.5s ease-in-out !important;
+  }
+
+  @keyframes fadeInSlowly {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    50% {
+      opacity: 0.5;
+      transform: translateY(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Cooking Pot Animations */
+  .cooking-pot {
+    animation: gentleFloat 12s ease-in-out infinite !important;
+  }
+
+  @keyframes gentleFloat {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+
+  /* Bubble Animations */
+  .bubble {
+    animation-duration: 15s !important;
+  }
+
+  .bubble-1 { animation-delay: 0s !important; }
+  .bubble-2 { animation-delay: 3s !important; }
+  .bubble-3 { animation-delay: 6s !important; }
+  .bubble-4 { animation-delay: 9s !important; }
+  .bubble-5 { animation-delay: 12s !important; }
+  .bubble-6 { animation-delay: 15s !important; }
+
+  /* Steam Effects */
+  .steam-line {
+    animation: slowSteam 20s ease-out infinite !important;
+    opacity: 0.5 !important;
+  }
+
+  @keyframes slowSteam {
+    0% {
+      transform: translateY(0) translateX(0) scale(0.5);
+      opacity: 0.5;
+    }
+    50% {
+      opacity: 0.3;
+    }
+    100% {
+      transform: translateY(-150%) translateX(-20px) scale(1.2);
+      opacity: 0;
+    }
+  }
+
+  .steam-1 { animation-delay: 0s !important; }
+  .steam-2 { animation-delay: 4s !important; }
+  .steam-3 { animation-delay: 8s !important; }
+  .steam-4 { animation-delay: 12s !important; }
+  .steam-5 { animation-delay: 16s !important; }
+
+  /* Flame Animations */
+  .flame {
+    animation: gentleFlame 10s ease-in-out infinite !important;
+  }
+
+  @keyframes gentleFlame {
+    0%, 100% {
+      transform: scale(1) rotate(0deg);
+      opacity: 0.8;
+    }
+    50% {
+      transform: scale(1.05) rotate(2deg);
+      opacity: 0.9;
+    }
+  }
+
+  /* CTA Button Animation */
+  .hero-cta-button {
+    transition: all 1.2s ease-in-out !important;
+  }
+
+  .hero-cta-button:hover {
+    transform: translateY(-3px) scale(1.02) !important;
+    transition: all 1.2s ease-in-out !important;
+  }
+
+  /* Contact Button Animation */
+  .contact-button-3d {
+    transition: all 1.2s ease-in-out !important;
+  }
+
+  .contact-button-3d:hover {
+    transform: translateY(-3px) !important;
+    transition: all 1.2s ease-in-out !important;
+  }
+
+  /* Domain Text Link Animation */
+  .domain-text a {
+    transition: all 1.5s ease-in-out !important;
+  }
+
+  /* Hero Container Transitions */
+  .hero-container {
+    transition: all 1.5s ease-in-out !important;
+  }
+
+  /* Ingredient Animations */
+  .ingredient {
+    animation-duration: 20s !important;
+  }
+
+  .shrimp-1, .shrimp-2,
+  .veg-1, .veg-2, .veg-3,
+  .lemon-1, .lemon-2,
+  .pepper-1, .pepper-2 {
+    animation: gentleFloat 20s ease-in-out infinite !important;
+  }
+
+  /* Ember Animations */
+  .ember {
+    animation: slowEmber 15s ease-in-out infinite !important;
+  }
+
+  @keyframes slowEmber {
+    0% {
+      transform: translateY(0) translateX(0);
+      opacity: 0.8;
+    }
+    50% {
+      opacity: 0.4;
+    }
+    100% {
+      transform: translateY(-80px) translateX(-15px);
+      opacity: 0;
+    }
+  }
+
+  /* Performance Optimizations */
+  .hero-section * {
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+  }
+
+  /* Smooth Scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Add gentle transitions for all interactive elements */
+  .hero-section button,
+  .hero-section a,
+  .hero-section .hero-text > * {
+    transition: all 1s ease-in-out !important;
+  }
+}

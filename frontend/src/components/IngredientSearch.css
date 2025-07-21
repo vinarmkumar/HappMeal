@@ -1,0 +1,258 @@
+/* Ingredient Search Component Styles */
+.ingredient-search {
+  padding: 2rem 1rem;
+  margin: 2rem 0;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, 
+    rgba(255, 138, 101, 0.1), 
+    rgba(255, 206, 84, 0.1)
+  );
+}
+
+.ingredient-search.dark {
+  background: linear-gradient(135deg, 
+    rgba(34, 34, 34, 0.8), 
+    rgba(51, 51, 51, 0.8)
+  );
+}
+
+.ingredient-search-container {
+  max-width: 600px;
+  width: 100%;
+  padding: 2.5rem;
+  border-radius: 20px;
+  text-align: center;
+  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  transition: all 0.3s ease;
+}
+
+.ingredient-search.dark .ingredient-search-container {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.ingredient-search-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 
+    0 12px 40px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.ingredient-search-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, #ff8a65, #ffce54);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.ingredient-search.dark .ingredient-search-title {
+  background: linear-gradient(135deg, #ff8a65, #ffce54);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.ingredient-search-subtitle {
+  font-size: 1.1rem;
+  color: rgba(0, 0, 0, 0.7);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.ingredient-search.dark .ingredient-search-subtitle {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.ingredient-input-container {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.ingredient-input {
+  flex: 1;
+  min-width: 250px;
+  padding: 1rem 1.5rem;
+  border: 2px solid rgba(255, 138, 101, 0.3);
+  border-radius: 15px;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.ingredient-search.dark .ingredient-input {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 138, 101, 0.4);
+  color: white;
+}
+
+.ingredient-input::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.ingredient-search.dark .ingredient-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.ingredient-input:focus {
+  border-color: #ff8a65;
+  box-shadow: 0 0 20px rgba(255, 138, 101, 0.3);
+  transform: translateY(-2px);
+}
+
+.ingredient-search-btn {
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #ff8a65, #ff7043);
+  color: white;
+  border: none;
+  border-radius: 15px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  min-width: 150px;
+  box-shadow: 0 4px 15px rgba(255, 138, 101, 0.4);
+}
+
+.ingredient-search-btn:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255, 138, 101, 0.5);
+  background: linear-gradient(135deg, #ff7043, #ff5722);
+}
+
+.ingredient-search-btn:active {
+  transform: translateY(-1px);
+}
+
+.ingredient-search-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.loading-spinner {
+  animation: spin 1s linear infinite;
+  display: inline-block;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.ingredient-tips {
+  text-align: left;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 12px;
+  padding: 1.5rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.ingredient-search.dark .ingredient-tips {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.ingredient-tips h3 {
+  margin: 0 0 1rem 0;
+  color: #ff8a65;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.ingredient-tips ul {
+  margin: 0;
+  padding-left: 1.5rem;
+  list-style-type: none;
+}
+
+.ingredient-tips li {
+  margin-bottom: 0.5rem;
+  color: rgba(0, 0, 0, 0.7);
+  position: relative;
+}
+
+.ingredient-search.dark .ingredient-tips li {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.ingredient-tips li::before {
+  content: "✓";
+  color: #ff8a65;
+  font-weight: bold;
+  position: absolute;
+  left: -1.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .ingredient-search {
+    padding: 1rem;
+  }
+  
+  .ingredient-search-container {
+    padding: 1.5rem;
+  }
+  
+  .ingredient-search-title {
+    font-size: 2rem;
+  }
+  
+  .ingredient-input-container {
+    flex-direction: column;
+  }
+  
+  .ingredient-input {
+    min-width: auto;
+  }
+  
+  .ingredient-search-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .ingredient-search-title {
+    font-size: 1.8rem;
+  }
+  
+  .ingredient-search-subtitle {
+    font-size: 1rem;
+  }
+}
+
+/* Animation for when component appears */
+.ingredient-search-container {
+  animation: slideInUp 0.6s ease-out;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

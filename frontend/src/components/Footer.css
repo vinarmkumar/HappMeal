@@ -1,0 +1,27 @@
+/* Footer Styles */
+.footer {
+  border-top: 1px solid;
+  margin-top: auto;
+}
+
+.footer.light {
+  border-color: #e5e7eb;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.footer.dark {
+  border-color: #374151;
+  background: rgba(17, 24, 39, 0.5);
+}
+
+.footer-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.footer-text {
+  opacity: 0.8;
+  font-size: 0.875rem;
+}

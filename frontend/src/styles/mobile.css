@@ -1,0 +1,342 @@
+/* Mobile-specific optimizations */
+
+/* Modern Header Mobile Overrides */
+@media (max-width: 768px) {
+  /* Ensure modern header mobile styles take precedence */
+  .modern-header .desktop-only {
+    display: none !important;
+  }
+  
+  .modern-header .mobile-only {
+    display: flex !important;
+  }
+  
+  /* Modern mobile navigation overrides */
+  .modern-mobile-nav-content {
+    width: 100vw !important;
+    max-width: 100vw !important;
+  }
+  
+  /* Improved touch targets */
+  .modern-mobile-link,
+  .modern-mobile-btn {
+    min-height: 48px;
+    touch-action: manipulation;
+  }
+  
+  .modern-hamburger {
+    touch-action: manipulation;
+  }
+}
+
+/* Legacy Navigation Hiding */
+@media (max-width: 768px) {
+  /* Hide old desktop navigation on mobile */
+  .header-nav.desktop-nav {
+    display: none !important;
+  }
+  
+  /* Show old mobile menu toggle if still present */
+  .mobile-menu-toggle {
+    display: flex !important;
+    z-index: 1001;
+  }
+  
+  /* Ensure old mobile menu overlay is properly positioned */
+  .mobile-nav-overlay {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    z-index: 999 !important;
+  }
+  
+  /* Old mobile menu content */
+  .mobile-nav {
+    max-width: 100vw;
+    box-sizing: border-box;
+  }
+  
+  /* Improved touch targets for old elements */
+  .mobile-nav-link,
+  .mobile-action-btn {
+    min-height: 48px;
+    touch-action: manipulation;
+  }
+}
+
+/* Disable complex animations on mobile for performance */
+@media (max-width: 768px) {
+  /* Slow down and simplify animations for mobile */
+  *, *::before, *::after {
+    animation-duration: 0.8s !important;
+    transition-duration: 0.6s !important;
+    animation-timing-function: ease-out !important;
+  }
+  
+  /* Specific animation adjustments */
+  .fade-in,
+  .slide-in,
+  .morph-in {
+    animation-duration: 1s !important;
+    transition-duration: 0.8s !important;
+  }
+  
+  /* Stagger animations - increase delay for mobile */
+  .stagger-container > *:nth-child(1) { animation-delay: 0.2s !important; }
+  .stagger-container > *:nth-child(2) { animation-delay: 0.4s !important; }
+  .stagger-container > *:nth-child(3) { animation-delay: 0.6s !important; }
+  .stagger-container > *:nth-child(4) { animation-delay: 0.8s !important; }
+  .stagger-container > *:nth-child(5) { animation-delay: 1s !important; }
+  
+  /* Disable parallax effects on mobile */
+  .parallax-element,
+  .advanced-parallax,
+  .floating-elements {
+    transform: none !important;
+    animation: none !important;
+  }
+  
+  /* Simplify morphing animations */
+  .morph-in,
+  .morphing-button {
+    animation: gentle-fade-in 1.2s ease !important;
+  }
+  
+  /* Disable magnetic effects on touch devices */
+  .magnetic-element {
+    transform: none !important;
+    transition: none !important;
+  }
+  
+  /* Cooking pot animations - slow them down */
+  .cooking-pot {
+    animation-duration: 6s !important; /* Slower gentle shake */
+  }
+  
+  .bubble,
+  .steam-line,
+  .flame {
+    animation-duration: 4s !important; /* Slower cooking effects */
+  }
+  
+  .ingredient {
+    animation-duration: 5s !important; /* Slower floating ingredients */
+  }
+  
+  /* Text animations - slower reveal */
+  .animated-text span {
+    transition-duration: 1s !important;
+    transition-delay: 0.1s !important;
+  }
+  
+  /* Main content layout fixes */
+  .main-content {
+    width: 100% !important;
+    max-width: 100vw !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow-x: hidden !important;
+  }
+  
+  /* Section spacing adjustments */
+  .hero-section,
+  .welcome-section,
+  .features-section,
+  .search-section {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  
+  /* Ensure touch targets are appropriate size */
+  .btn,
+  .button,
+  button,
+  a,
+  input,
+  textarea {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 12px 16px;
+  }
+  
+  /* Optimize scroll performance */
+  .scroll-container {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+  }
+  
+  /* Prevent horizontal scroll */
+  body,
+  html {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+  
+  /* Container constraints */
+  .container,
+  .hero-container,
+  .features-container,
+  .welcome-container {
+    max-width: 100% !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  
+  /* Responsive typography */
+  h1 { font-size: 2rem !important; }
+  h2 { font-size: 1.5rem !important; }
+  h3 { font-size: 1.25rem !important; }
+  p { font-size: 0.9rem !important; }
+  
+  /* Grid adjustments */
+  .grid,
+  .features-grid,
+  .welcome-grid {
+    grid-template-columns: 1fr !important;
+    gap: 15px !important;
+  }
+  
+  /* Card spacing */
+  .card,
+  .feature-card,
+  .recipe-card {
+    margin-bottom: 15px;
+    padding: 15px !important;
+  }
+}
+
+/* Add gentle animation keyframes for mobile */
+@keyframes gentle-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Further optimizations for very small screens */
+  .container,
+  .hero-container,
+  .features-container,
+  .main-content {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  /* Smaller typography */
+  h1 { font-size: 1.75rem !important; }
+  h2 { font-size: 1.25rem !important; }
+  h3 { font-size: 1.1rem !important; }
+  p { font-size: 0.85rem !important; }
+  
+  /* Reduced spacing */
+  .card,
+  .feature-card,
+  .recipe-card {
+    padding: 10px !important;
+    margin-bottom: 10px;
+  }
+  
+  /* Smaller buttons */
+  .btn,
+  .button,
+  button {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+  }
+}
+
+/* Simple animations for mobile */
+@keyframes simple-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes simple-slide-up {
+  from { 
+    opacity: 0; 
+    transform: translateY(20px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+/* Mobile-friendly hover states (touch) */
+@media (hover: none) and (pointer: coarse) {
+  .hover-effect:hover,
+  .btn:hover,
+  .button:hover,
+  .card:hover {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+  
+  /* Use active states instead */
+  .hover-effect:active,
+  .btn:active,
+  .button:active,
+  .card:active {
+    transform: scale(0.98);
+    opacity: 0.8;
+  }
+}
+
+/* Accessibility improvements for mobile */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Performance optimizations */
+.will-change-transform {
+  will-change: transform;
+}
+
+.will-change-auto {
+  will-change: auto;
+}
+
+/* Mobile scrollbar styling */
+@media (max-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 107, 53, 0.5);
+    border-radius: 3px;
+  }
+}

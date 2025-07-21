@@ -1,0 +1,150 @@
+.cooking-animation-container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  perspective: 1000px;
+  margin: 2rem auto;
+}
+
+.food-plate {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  animation: plateFloat 3s ease-in-out infinite;
+}
+
+.plate-base {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotateX(60deg);
+  transform-style: preserve-3d;
+}
+
+.plate-rim {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #e0e0e0, #ffffff);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transform: translateZ(10px);
+}
+
+.plate-center {
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  left: 5%;
+  top: 5%;
+  border-radius: 50%;
+  background: #ffffff;
+  transform: translateZ(5px);
+}
+
+.food-item {
+  position: absolute;
+  transform-style: preserve-3d;
+}
+
+.salad {
+  width: 60px;
+  height: 40px;
+  background: linear-gradient(45deg, #4CAF50, #81C784);
+  border-radius: 30px;
+  left: 30%;
+  top: 40%;
+  transform: translateZ(15px) rotate(-30deg);
+  animation: foodBounce 2s ease-in-out infinite;
+}
+
+.tomato {
+  width: 30px;
+  height: 30px;
+  background: linear-gradient(45deg, #FF5252, #FF8A80);
+  border-radius: 50%;
+  left: 55%;
+  top: 35%;
+  transform: translateZ(20px);
+  animation: foodBounce 2s ease-in-out infinite 0.3s;
+}
+
+.cucumber {
+  width: 45px;
+  height: 15px;
+  background: linear-gradient(45deg, #66BB6A, #A5D6A7);
+  border-radius: 10px;
+  left: 40%;
+  top: 60%;
+  transform: translateZ(18px) rotate(45deg);
+  animation: foodBounce 2s ease-in-out infinite 0.6s;
+}
+
+.food-sparkle {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #FFF;
+  border-radius: 50%;
+  opacity: 0;
+}
+
+.sparkle-1 { left: 30%; top: 30%; animation: sparkle 2s ease-in-out infinite; }
+.sparkle-2 { left: 60%; top: 40%; animation: sparkle 2s ease-in-out infinite 0.4s; }
+.sparkle-3 { left: 45%; top: 65%; animation: sparkle 2s ease-in-out infinite 0.8s; }
+
+.steam-container {
+  position: absolute;
+  width: 100%;
+  height: 100px;
+  top: -20px;
+  left: 0;
+  transform: translateZ(30px);
+}
+
+.steam {
+  position: absolute;
+  width: 8px;
+  height: 50px;
+  background: linear-gradient(to top, transparent, rgba(255, 255, 255, 0.4));
+  border-radius: 50%;
+  transform-origin: bottom;
+}
+
+.steam-1 { left: 40%; animation: steam 3s ease-out infinite; }
+.steam-2 { left: 50%; animation: steam 3s ease-out infinite 0.4s; }
+.steam-3 { left: 60%; animation: steam 3s ease-out infinite 0.8s; }
+.steam-4 { left: 45%; animation: steam 3s ease-out infinite 1.2s; }
+
+@keyframes plateFloat {
+  0%, 100% { transform: translateY(0) rotateX(0); }
+  50% { transform: translateY(-20px) rotateX(5deg); }
+}
+
+@keyframes foodBounce {
+  0%, 100% { transform: translateZ(15px); }
+  50% { transform: translateZ(25px); }
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 0; transform: scale(0); }
+  50% { opacity: 0.8; transform: scale(1); }
+}
+
+@keyframes steam {
+  0% { 
+    opacity: 0.5;
+    transform: translateY(0) scaleX(1);
+  }
+  50% { 
+    opacity: 0.3;
+    transform: translateY(-20px) scaleX(2);
+  }
+  100% { 
+    opacity: 0;
+    transform: translateY(-40px) scaleX(1);
+  }
+}

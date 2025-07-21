@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="chefHatGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFFFFF"/>
+      <stop offset="100%" style="stop-color:#E0E0E0"/>
+    </linearGradient>
+    <linearGradient id="faceGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFE0B2"/>
+      <stop offset="100%" style="stop-color:#FFB74D"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2"/>
+      <feOffset dx="1" dy="2"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.3"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Chef Hat with 3D effect -->
+  <path d="M24 4c-6 0-10 4-10 8 0 2 1 3.5 2 4.5C11 17 9 20 9 24h30c0-4-2-7-7-7.5 1-1 2-2.5 2-4.5 0-4-4-8-10-8z" 
+        fill="url(#chefHatGrad)" 
+        filter="url(#shadow)"/>
+  
+  <!-- Face -->
+  <circle cx="24" cy="28" r="8" 
+          fill="url(#faceGrad)" 
+          filter="url(#shadow)"/>
+  
+  <!-- Eyes -->
+  <g transform="translate(24 27)">
+    <circle cx="-3" cy="-1" r="1" fill="#333333"/>
+    <circle cx="3" cy="-1" r="1" fill="#333333"/>
+  </g>
+  
+  <!-- Smile -->
+  <path d="M21 30c0 1 1.5 2 3 2s3-1 3-2" 
+        fill="none" 
+        stroke="#333333" 
+        stroke-width="1" 
+        stroke-linecap="round"/>
+  
+  <!-- Chef Uniform -->
+  <path d="M16 36V28h16v8l-2 4H18z" 
+        fill="#FF6B6B" 
+        filter="url(#shadow)"/>
+  
+  <!-- Buttons -->
+  <circle cx="24" cy="32" r="1" fill="#333333"/>
+  <circle cx="24" cy="35" r="1" fill="#333333"/>
+  
+  <!-- Chef's Collar -->
+  <path d="M16 28v-1h16v1" 
+        fill="#FFFFFF" 
+        stroke="#E0E0E0" 
+        stroke-width="0.5"/>
+  
+  <!-- 3D Effect Enhancement -->
+  <path d="M24 4c-6 0-10 4-10 8 0 0.5 0.1 1 0.2 1.5C15 9 19 6 24 6s9 3 9.8 7.5c0.1-0.5 0.2-1 0.2-1.5 0-4-4-8-10-8z" 
+        fill="#FFFFFF" 
+        opacity="0.3"/>
+</svg>

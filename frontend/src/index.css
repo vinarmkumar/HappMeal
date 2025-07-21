@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Base reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Enhanced mobile-first CSS reset */
+html {
+  -webkit-text-size-adjust: 100%; /* Prevent font scaling in landscape */
+  -webkit-tap-highlight-color: transparent; /* Remove tap highlight */
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: 100%;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  position: relative;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+}
+
+/* Mobile touch improvements */
+button, 
+input, 
+textarea, 
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0;
+  font-family: inherit;
+}
+
+/* Prevent zoom on input focus on iOS */
+@media screen and (max-width: 768px) {
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="search"],
+  textarea,
+  select {
+    font-size: 16px !important; /* Prevent zoom on iOS */
+  }
+}
+
+/* Improve touch targets */
+@media (max-width: 768px) {
+  button,
+  a,
+  input,
+  textarea {
+    min-height: 44px; /* iOS Human Interface Guidelines */
+    min-width: 44px;
+  }
+  
+  /* Ensure proper spacing for touch */
+  .btn,
+  .button,
+  button {
+    padding: 12px 16px;
+    margin: 4px;
+  }
+}
+
+/* Fix for viewport units on mobile */
+@supports (-webkit-touch-callout: none) {
+  .vh-fix {
+    height: -webkit-fill-available;
+  }
+}
+
+/* Responsive images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Text selection */
+::selection {
+  background: rgba(255, 107, 53, 0.3);
+  color: inherit;
+}
